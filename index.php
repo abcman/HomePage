@@ -10,7 +10,6 @@
 
 # Get this theme's settings based on what was entered within it's plugin. 
 # This function is in functions.php 
-Innovation_Settings();
 
 # Include the header template
 include('header.php'); 

@@ -1,4 +1,4 @@
- <?php
+﻿ <?php
  include ('db.php');
  
   $spisok = mysql_query("select * from users;");
@@ -22,12 +22,14 @@
       exit();
     }
  
- echo '<center><form method="post" action="new.php"> 
+ echo '<p>
+ <center>
+ <form method="post" action="user.php"> 
   Введите имя <br><input size="30" name="name" type="text">
   Введите пароль: <br><input size="45" name="passw" type="text">
   Введите дату: <br><input size="45" name="date" type="text">
   <br><input value="Добавить запись" type="submit">
-  </form></center>';
+  </form></center></p>';
  
  $name = $_POST['name']; // передаем переменной email значение глобального массива POST
  $passw = $_POST['passw']; // повторять не буду: тут происходит то, что в первом случае

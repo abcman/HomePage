@@ -1,5 +1,6 @@
 	<?php
     include "db.php";
+	//ВОТ ТУТ СЕРЕНЬКА
     $ath = mysql_query("select * from users;");
     if($ath)
     {

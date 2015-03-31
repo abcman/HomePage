@@ -32,7 +32,7 @@
  
  $name = $_POST['name']; // передаем переменной email значение глобального массива POST
  $passw = $_POST['passw']; // повторять не буду: тут происходит то, что в первом случае
- if ($passw != 0) {
+ if ($passw) {
  $sql = 'INSERT INTO users(name, passw) 
  VALUES("'.$name.'", "'.$passw.'")';
  echo $name;

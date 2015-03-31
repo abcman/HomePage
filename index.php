@@ -54,7 +54,6 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                <?php get_top_menu(); ?>
-			   
             </ul>
           </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->

@@ -1,5 +1,27 @@
 ﻿ <?php
  include ('db.php');
+  
+  echo '<p>
+ <center>
+ <form method="post" action="?action=add_user"> 
+  <br>Введите имя: <input size="30" name="name" type="text">
+ <br> Введите пароль: <input size="30" name="passw" type="text">
+  <br><input value="Добавить запись" type="submit">
+  </form></center></p>';
+ 
+  $name = $_POST['name']; // передаем переменной email значение глобального массива POST
+ $passw = $_POST['passw']; // повторять не буду: тут происходит то, что в первом случае
+ if ($passw) {
+ $sql = 'INSERT INTO users(name, passw) 
+ VALUES("'.$name.'", "'.$passw.'")';
+ echo $name;
+// проверка
+ if(!mysql_query($sql))
+ {echo '<center><p><b>Ошибка при добавлении данных!</b></p></center>';} 
+ else 
+ {echo '<center><p><b>Данные добавлены!</b></p></center>';}
+ }
+ else { echo 'Данные не могут быть пустыми';}
  
   $spisok = mysql_query("select * from users;");
     if($spisok)
@@ -21,28 +43,6 @@
       echo "<p><b>Error: ".mysql_error()."</b><p>";
       exit();
     }
- 
- echo '<p>
- <center>
- <form method="post" action="user.php"> 
-  <br>Введите имя: <input size="30" name="name" type="text">
- <br> Введите пароль: <input size="30" name="passw" type="text">
-  <br><input value="Добавить запись" type="submit">
-  </form></center></p>';
- 
- $name = $_POST['name']; // передаем переменной email значение глобального массива POST
- $passw = $_POST['passw']; // повторять не буду: тут происходит то, что в первом случае
- if ($passw) {
- $sql = 'INSERT INTO users(name, passw) 
- VALUES("'.$name.'", "'.$passw.'")';
- echo $name;
-// проверка
- if(!mysql_query($sql))
- {echo '<center><p><b>Ошибка при добавлении данных!</b></p></center>';} 
- else 
- {echo '<center><p><b>Данные добавлены!</b></p></center>';}
- }
- else { echo 'Данные не могут быть пустыми';}
-
+  
  ?>
 

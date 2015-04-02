@@ -38,8 +38,8 @@ function get_page_title(){
 // function get_component('sidebar'){
 	function get_sidebar(){
 	echo '<br /><a href="/">Главная</a>';	
-	echo '<br /><a href="org.php">Организации</a>';	
-	echo '<br /><a href="user.php">Пользователи</a>';	
+	echo '<br /><a href="?action=org">Организации</a>';	
+	echo '<br /><a href="?action=user">Пользователи</a>';	
 }
 	
 function get_page_content(){
@@ -60,4 +60,8 @@ function get_page_content(){
 	if ($_GET[action]==org){
 		include 'org.php';
 		$title = 'Добавить организацию в каталог';} 
+		
+	if ($_GET[action]==cat){
+		include 'cats.php';
+		$title = 'Рубрики';} 		
 }

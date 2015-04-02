@@ -1,6 +1,8 @@
 ﻿ <?php
  include ('db.php');
-
+$category= mysql_query("select * from category;");
+//это для категорий
+ 
  echo '<p>
  <center>
  <form method="post" action="?action=org"> 
@@ -12,7 +14,13 @@
 </tr>
 <tr>
 <td>Введите адрес: <input size="30" name="adress" type="text"</td>
-<td>Выберите категорию: <input size="10" name="category" type="text"></td>
+<td>Выберите категорию: <select>'
+ while($org = mysql_fetch_array($category))
+      {
+echo '<option value="Sony"></option>';
+	  };
+'</select> 
+</td>
 <td>Пользователь: ЭТО ВЫ</td>
 </tr>
 <tr><td align=center padding="20" colspan="2"><input value="Добавить запись" type="submit"></td></tr>
